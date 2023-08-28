@@ -11,16 +11,16 @@ export class AddBookComponent {
 
   constructor(private http:HttpClient) {}
 
-  url:string='http://localhost:3000/student';
+  url:string= 'http://localhost:3000/books';
 
   addBook(addBookForm: any): void {
     const formData = addBookForm.value;
 
     this.http.post(this.url, formData).subscribe(
       (response: any) => {
-        // console.log('Server Response:', response);
-        // console.log('Student Added Successfully');
-        alert('Student Added Successfully');
+        console.log('Server Response:', response);
+        console.log('Student Added Successfully');
+        alert('Book Added Successfully');
       },
       (error: any) => {
         console.error('Error:', error);

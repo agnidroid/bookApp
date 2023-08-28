@@ -1,1 +1,23 @@
-<p>view-book works!</p>
+<h1>View books</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Author Name</th>
+        <th scope="col">Publishing Year</th>
+        <th scope="col">Language</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <th scope="row">{{book.id}}</th>
+        <td>{{book.bookName}}</td>
+        <td>{{book.authorName}}</td>
+        <td>{{book.publishingYear}}</td>
+        <td>{{book.language}}</td>
+        <td><button class="btn btn-danger" (click)="deleteBook(book.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
